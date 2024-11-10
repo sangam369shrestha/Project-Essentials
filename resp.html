@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(background\ image\ for\ home\ page\ of\ task\ management\ system\ website.png);
+            color: #e6e6e6;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            color: #e6e6e6;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar .menu {
+            display: flex;
+            flex-direction: row;
+        }
+        .navbar .menu a {
+            margin-left: 10px;
+        }
+        .navbar .toggle {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .navbar .menu.active {
+                display: flex;
+            }
+            .navbar .toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MySite</div>
+        <div class="toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
